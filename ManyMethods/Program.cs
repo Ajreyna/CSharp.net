@@ -30,7 +30,7 @@ namespace ManyMethods2
         public static void Addition()
         {
             Console.WriteLine("Please enter the first number: ");
-            int num1 = int.Parse(Console.ReadLine());
+            int num1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter the second number: ");
             int num2 = int.Parse(Console.ReadLine());
             int sum = num1 + num2;
@@ -51,6 +51,7 @@ namespace ManyMethods2
                 if (cd == "cat" || cd == "cats")
                 { Console.WriteLine("You prefer cats"); }
             }
+            Console.Read();
         }
 
         public static void oddEvent()
