@@ -1,150 +1,40 @@
-﻿using System;
+﻿
+  using System;
 
 
 namespace masterMind
 {
-    class primaryClass
+    class program
     {
-        // static string[] hint = new["hint"];
-        // string[][] board = ("board");
-        //static string[] secret = new string[] { "Red", "Yellow", "Blue" };
-        // static string[] colors = new colorArray
-    }
-
-    public static void Main(string[] args)
-    {
-
-        // static string[] hint = new["hint"];
-        string[][] board = ("board");
-        string[] secret = new string[] { "Red", "Yellow", "Blue" };
-         static string[] colorArray = new (string,2);
         
+        static int[] hint;
+        static int tryCount;
+        string[][] board;
+        const int allowedAttempsts = 4;
+        static string[] secret = new string[codeLength];
+        static string[] colorArray = new string[] { "Red", "Yellow", "Blue" };
+        static bool gameOver = false;
 
-        Console.WriteLine("Welcome to Mastermind!");
-        Random rnd = new Random();
-        for (int i = 0; i < 2; i++)
+
+        static void Main(string[] args)
         {
-            secret[i] = colorArray[rnd.Next(0, 2)];
-        }
-
-
-        //Ask user for input
-        Console.WriteLine("Enter your guess");
-        string[] guess = Console.ReadLine().Split(' ');
-
-        if (guess[0] == secret[0] && guess[1] == secret[1])
-        {
-            Console.WriteLine("You won!");
-        }
-        else
-        {
-
-
-
-            int correctColorCount = 0;
-            int correctPositionCount = 0;
-            if (secret.Contains(guess[0]))
-            {
-                correctColorCount++;
-            }
-            if (secret.Contains(guess[1])) ;
-            {
-                correctColorCount++;
-            }
-
+            //Generate Random Secret
+            Random rnd = new Random();
             for (int i = 0; i < 2; i++)
             {
-                if (secret.Contains(guess[i]))
-                {
-                    correctColorCount++;
-                }
-            }
-            if (guess[0] == secret[0])
-            {
-                correctPositionCount++;
-            }
-            if (guess[1] == secret[1])
-            {
-                correctPositionCount++;
-            }
+                secret[i] = colorArray[rnd.Next(0, 2)];
 
-            for (int i = 0; i < 2; i++)
-            {
-                if (guess[i] == secret[i])
-                {
-                    correctPositionCount++;
-                }
             }
-
-            Console.WriteLine("Your hint is " + correctColorCount + "-" + correctPositionCount);
+            while (gameOver == false)
+            {
+                // ask user for input
+                Console.WriteLine("Enter your guess:");
+                string[] guess = Console.ReadLine().Split(' ');
+                gameOver = isCorrectAnswer(guess);
+            }
         }
-    } }
-    //public bool IsCorrectAnswer(string[] userGuess);
-
-
-/*using System;
-
-namespace Mastermind
-{
-    class Program
-    {
-        //possible letters in code
-        public static char[] letters = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
-
-        //size of code
-        public static int codeSize = 4;
-
-        // number of allowd attempts to crack the code
-        public static int allowedAttempts = 10;
-
-        // number of tried guesses
-        public static int numTry = 0;
-
-        // test solution
-        public static char[] solution = new char[] { 'a', 'b', 'c', 'd' };
-
-        //game board
-        public static string[][] board = new string[allowedAttempts][];
-
-        public static void Main()
+        public static bool IsCorrectAnswer(string[] userGuess)
         {
-            char[] guess = new char[4];
 
-            createBoard();
-            DrawBoard();
-            Console.WriteLine("Enter Guess");
-            guess = Console.ReadLine().ToCharArray;
-
-            // leave this command at the end so your program does not close automatically
-            Console.ReadLine();
-        }
-
-        public static bool CheckSolution(char[] guess)
-        {
-            //.WriteLine("Enter your guess");
-            while (true)
-            {
-                if (guess == solution)
-                {
-                    Console.WriteLine("you win!");
-                }
-                else
-                {
-                    Console.WriteLine("try again");
-                }
-            }      
-        }
-
-        public static string GenerateHint(char[] guess)
-        {
-            if (CheckSolution == false) ;
-            {
-                Console.WriteLine("Try this");
-                if checkSolution 
-            }
-            
-            return " ";
         }
     }
-}
-*/
