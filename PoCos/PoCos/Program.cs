@@ -21,7 +21,7 @@ namespace PoCos
 
 
 
-            Console.WriteLine(myLicense.LicenseDeets());
+            //Console.WriteLine(myLicense.LicenseDeets());
 
 
 
@@ -57,7 +57,16 @@ namespace PoCos
         public string publisher { get; set; }
         public int Price { get; set; }
 
-        public Book(string Title1, string Author1, string Num_Of_Pages, stringa)
+        public  Book(string Title1, string Author1, string Num_Of_Pages, string SKU1, string Publisher1, string Price1)
+        {
+            Title = Title1;
+            Author = Author1;
+            Num_Of_Pages = Convert.ToString((NumOfPages));
+            SKU1 = Convert.ToString(SKU);
+            publisher = Publisher1;
+            Price1 = Convert.ToString(Price);
+
+        }
 
     }
 

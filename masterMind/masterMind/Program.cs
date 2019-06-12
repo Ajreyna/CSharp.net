@@ -69,7 +69,7 @@ namespace mastermind
             int turns = 0;
 
             //Game Instructions
-            Console.Write("Mastermind!\n \n");
+            Console.Write("Welcome to Mastermind!\n \n");
             Console.WriteLine("The computer will choose two colors Red, blue, or green.\n");
             Console.WriteLine("You must guess the correct colors and the correct placement first, and second.");
             Console.WriteLine("If neither color nor placement are correct the computer will say 0-0\n");
