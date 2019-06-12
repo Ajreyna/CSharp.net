@@ -78,6 +78,15 @@ namespace PoCos
         public string SeatingCapacity { get; set; }
         public int NumberOfEngines { get; set; }
 
+
+        public Airplane(string Manufacturer1, string Model1, string variant1, string SeatingCapacity1, int NumberOfEngines1)
+        {
+            Manufacturer = Manufacturer1;
+            Model = Model1;
+            variant = variant1;
+            SeatingCapacity = SeatingCapacity1;
+            NumberOfEngines = NumberOfEngines1;
+        }
     }
         
     #region car example
