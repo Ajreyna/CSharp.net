@@ -6,27 +6,27 @@ namespace SuperHeroes
     {
         public static void Main(string[] args)
         {
-            point2d p = new point2d();
+
         }
-    class point2d
+    class Person
     {
-            //public int x { get; set; }
-
-            private int _x;
-
-            public int x
+          
+            public void Person1()
             {
-                get
-                {
-                    return _x;
-                }
-                set
-                {
-                    _x = value;
-                }
+                string Name, NickName;
+
+
             }
+
     }
 
+    class SuperHero
+    {
+
+    
+    }
+    class Villian
+    {
 
     }
 }
