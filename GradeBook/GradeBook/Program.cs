@@ -10,9 +10,9 @@ namespace GradeBook
     {
         public static void Main(string[] args)
         {
-            
 
-             //  1. Asks for a student name or quit
+
+            //  1. Asks for a student name or qu
             Console.WriteLine("Enter a students name or quit to quit");
             string choice = Console.ReadLine();
 
@@ -21,18 +21,19 @@ namespace GradeBook
             //    ask for student grades
             Console.WriteLine("Enter a grade for student");
             string grades = Convert.ToString(Console.ReadLine());
-           
-          //  while (choice.ToLower() != "quit")
+
+            //  while (choice.ToLower() != "quit")
             //{
 
 
-                Dictionary<int, string> studentGrades = new Dictionary<int, string>()
-                {
-                    { 1, "one" },
+            IDictionary<int, string> studentGrades = new Dictionary<int, string>();
 
-                    { 2, "two" }
-                };
+            { studentGrades.Add(new KeyValuePair<int, string>(1, "one"));
 
+                studentGrades.Add(new KeyValuePair<int, string>(2, "two"));
+                studentGrades.Add(new KeyValuePair<int, string>(3, "three"));
+
+            }
                              //{
                 //{"name1", 90},{"name2", 100}, {"name3", 80}
                 //};
