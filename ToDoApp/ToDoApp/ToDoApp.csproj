@@ -7,5 +7,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="App.cs" />
+    <Compile Remove="ConsoleUtils.cs" />
+    <Compile Remove="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ItemRepository" />
   </ItemGroup>
 </Project>

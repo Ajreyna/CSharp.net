@@ -13,7 +13,7 @@ namespace ToDoApp
         public int id { get; private set; }
         public string Description { get; set; }
         public string Status { get; set; }
-        public DateTime DueDate { get; set; }
+        public string DueDate { get; set; }
         public ToDoItem(string Description, string status, string DueDate)
         {
             this.Description = Description;
@@ -21,9 +21,10 @@ namespace ToDoApp
             this.DueDate = DueDate;
         }
 
+
     }
 
-    class ItemContext:DbContext()
+    class ItemContext:DbContext
     {
         public DbSet<ToDoItem> toDoItems;
     }
@@ -37,6 +38,8 @@ namespace ToDoApp
         {
             context = new ItemContext();
             context.Database.EnsureCreated();
+            
+            
         }
         //List all my toDo items
         public List<ToDoItem> GetToDoItems()
@@ -45,14 +48,14 @@ namespace ToDoApp
             return list.ToList();
         }
 
-        public void AddItem(string Description, string status, DateTime DueDate)
+        public void AddItem(string Description, string status, string DueDate)
         {
-
+            
         }
 
         public void AddItem(ToDoItem item)
         {
-
+            
         }
 
         public void UpdateItem(int id, string newDescription, string newStatus, string newDueDate)

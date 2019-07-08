@@ -72,7 +72,7 @@ namespace GradeBook
                 int arrayLength = gradesString.Length;
                 int[] grades = new int[arrayLength];
                 int i = 0;
-                int maxValue = 0;
+                int maxValue = 100;
                 int minValue = 0;
                 double average = 0;
                 while (i < gradesString.Length)
@@ -93,42 +93,5 @@ namespace GradeBook
     }
 }
 
-//{
-//{"name1", 90},{"name2", 100}, {"name3", 80}
-//};
-
-
-
-    //       Console.WriteLine(studentGrades);
-    //                // This is for after class logic on how to average the student scores
-    //                string sName;
-    //         string sGrades;
-    //          string[] arrayGrades;
-    //int[] iGrades;
-
-
-    //            foreach (var i in studentGrades.Keys)
-    //            {
-    //                sName = i;
-    //                sGrades = [i]; // it is like "100, 90, 80, 100"
-    //                arrayGrades = sGrades.Split(' ');
-    //            }
-
-               // iGrades = Array.ConvertAll(arrayGrades, int.Parse);
-                //Console.Read();
-
-
-
-
-//            }
-//            /////////////////////////////////////////////////////////
-//            /// Look up how to get average from integer array ///////
-//            ///     This will be the final item to print      ///////
-//            /////////////////////////////////////////////////////////
-
-            
-//        } 
-//    }
-//}
 
     
