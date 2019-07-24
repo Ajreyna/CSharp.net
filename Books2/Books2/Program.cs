@@ -42,7 +42,7 @@ namespace Students
             }
             else
             {
-                Console.WriteLine("Invalid full name, did not add a Book");
+                Console.WriteLine("Invalid name, did not add a Book");
             }
 
             Console.WriteLine("The Current List of Books and Authors are: ");

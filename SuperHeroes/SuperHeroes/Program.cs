@@ -6,89 +6,84 @@ using System.Threading.Tasks;
 
 namespace SuperHeroes
 {
-    class MainClass
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            var list = new NameList();
+            // calls a new nameslist then both functions within  Readline to keep the window open
+            var list = new NamesList();
             list.AddPeople();
             list.PrintAll();
             Console.ReadLine();
         }
+    }
+    public class Person
+    {
+        public virtual string Name { get; set; }
+        public string NickName { get; set; }
 
-        public class Person
+        public Person(string PersonName, string PersonNickName)
         {
-            public virtual string _Name { get; set; }
-            public string _NickName { get; set; }
-
-            public Person(string NameOfPerson, string NickNameOfPerson)
-            {
-                _Name = NameOfPerson;
-                _NickName = NickNameOfPerson;
-            }
-
-            public override string ToString()
-            {
-                return _Name;
-            }
-
-            public virtual void PrintGreeting()
-            {
-                Console.WriteLine("My name is {0}, but I go by {1}.", _Name, _NickName);
-            }
-
+            Name = PersonName;
+            NickName = PersonNickName;
         }
-
-        public class SuperHero : Person
+        public override string ToString()
         {
-            public override string _Name { get => base._Name; set => base._Name = value; }
-            public string RealName { get; set; }
-            public string superPowers { get; set; }
-
-            public SuperHero(string Name, string RealName, string superPowers) : base(Name, null)
-            {
-                Console.WriteLine("I am {0}. My Hero name is {1}. One power that I possess is {2}.", RealName, Name, superPowers);
-            }
+            return Name;
         }
-
-        class Villain :Person
+        //printed greeting that will be overridden by other classes.
+        public virtual void PrintGreeting()
         {
-            public string Nemesis { get; set; }
-            public string VillainsName { get; set; }
-
-            //Villain class needs to take the name via a Constructor
-            public Villain(string NameOVillain, string nemesis1) : base(NameOVillain, null)
-            {
-                VillainsName = NameOVillain;
-                Nemesis = nemesis1;
-            }
-
-            public override void PrintGreeting()
-            {
-                Console.WriteLine("{0}: I am {0}. Have you seen {1}?", VillainsName, Nemesis);
-            }
-        }
-
-        class NameList
-        {
-            static List<Person> NewPerson = new List<Person>();
-            public void AddPeople()
-            {
-                NewPerson.Add(new Person("Frank", "Stank"));
-                NewPerson.Add(new SuperHero("Batman", "Bruce Wayne", "I am the bat!"));
-                NewPerson.Add(new Villain("ScareCroW", "Legion of Doom"));
-            }
-            public void PrintAll()
-            {
-                foreach (var person in NewPerson)
-                {
-                    person.PrintGreeting();
-                }
-            }
-        
-
+            Console.WriteLine("Hi, my name is {0}, you can call me {1}.", Name, NickName);
         }
     }
-}
+    // Superhero class that inhertis from Person.
+    public class SuperHero : Person
+    {
+        public override string Name { get => base.Name; set => base.Name = value; }
+        public string RealName { get; set; }
+        public string SuperPower { get; set; }
 
-       
+        public SuperHero(string Name, string RealName, string SuperPower) : base(Name, null)
+        {
+            Console.WriteLine("I am {0}.  My SuperHero name is {1}. One of my powers is: {2}", RealName, Name, SuperPower);
+        }
+
+
+    }
+
+    class Villain : Person
+    {
+        public string ArchNemesis { get; set; }
+        public string VillainName { get; set; }
+        //Your Villain class should have a constructor that takes in the name and nemesis of the villain.And should pass null to the base constructor for the nickname.
+        public Villain(string vname, string anemesis) : base(vname, null)
+        {
+            VillainName = vname;
+            ArchNemesis = anemesis;
+        }
+
+        public override void PrintGreeting()
+        {
+            Console.WriteLine("{0}!!! I am {0}! Have you seen {1}???", VillainName, ArchNemesis);
+        }
+    }
+    class NamesList
+    {
+        static List<Person> NewPeople = new List<Person>();
+        public void AddPeople()
+        {
+            NewPeople.Add(new Person("Franklin", "Frankie"));
+            NewPeople.Add(new SuperHero("Radioactive Man", "Rainier Wolfcastle", "The goggles! They do nothing!!!"));
+            NewPeople.Add(new Villain("The Mighty Monarch", "Dr. Venture"));
+        }
+        public void PrintAll()
+        {
+            foreach (var person in NewPeople)
+            {
+                person.PrintGreeting();
+            }
+        }
+    }
+
+}
