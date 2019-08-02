@@ -24,8 +24,9 @@ namespace SuperHeroes
 
         public Person(string PersonName, string PersonNickName)
         {
+
             Name = PersonName;
-            NickName = PersonNickName;
+            NickName = PersonName;
         }
         public override string ToString()
         {
@@ -46,7 +47,7 @@ namespace SuperHeroes
 
         public SuperHero(string Name, string RealName, string SuperPower) : base(Name, null)
         {
-            Console.WriteLine("I am {0}.  My SuperHero name is {1}. One of my powers is: {2}", RealName, Name, SuperPower);
+            Console.WriteLine("I am {0}.  My SuperHero name is {1}. My super power is the {2}", RealName, Name, SuperPower);
         }
 
 
@@ -74,7 +75,7 @@ namespace SuperHeroes
         public void AddPeople()
         {
             NewPeople.Add(new Person("Franklin", "Frankie"));
-            NewPeople.Add(new SuperHero("Radioactive Man", "Rainier Wolfcastle", "The goggles! They do nothing!!!"));
+            NewPeople.Add(new SuperHero("Hong Kong Phooey", "Henry, The mild mannered janitor", "Hong Kong Phooey Chop"));
             NewPeople.Add(new Villain("The Mighty Monarch", "Dr. Venture"));
         }
         public void PrintAll()
