@@ -38,7 +38,8 @@ namespace Books_Inventory
 
 
 
-            foreach (Books b in context.books)
+//NotFiniteNumberException
+                foreach (Books b in context.books)
             {
                 Console.WriteLine("{0} - {1} {2}",
                      b.Id, b.Book, b.Author);

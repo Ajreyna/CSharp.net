@@ -6,58 +6,6 @@ using System.Threading.Tasks;
 
 namespace Checkers
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // The line below is needed so Console window can display
-            // the black disk and the white circle correctly
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-            ///TODO: Start the game
-            ///How do we start the game?
-            ///hint: What function should you call here?
-            ///
-            Game game = new Game();
-            game.DrawBoard();
-            game.Start();
-            Console.ReadKey();
-
-        }
-    }
-
-    #region Checker Class
-    public class Checker
-    {
-        public string Symbol { get; private set; }
-        public Position Position { get; set; }
-        public Color Team { get; private set; }
-
-        public Checker(Color player, int row, int col)
-        {
-            if (player == Color.Black)
-            {
-                int symbol = int.Parse("25CB", System.Globalization.NumberStyles.HexNumber);
-                Symbol = char.ConvertFromUtf32(symbol);
-                Team = Color.Black;
-            }
-            else
-            {
-                int symbol = int.Parse("25CF", System.Globalization.NumberStyles.HexNumber);
-                Symbol = char.ConvertFromUtf32(symbol);
-                Team = Color.White;
-            }
-            Position = new Position(row, col);
-        }
-    }
-    #endregion
-
-    #region Board Class
-
-
-    #endregion
-
-    #region Game Class
     public class Game
     {
         private Board board;
@@ -300,21 +248,4 @@ namespace Checkers
             }
         }
     }
-
-    #endregion
-
-    public enum Color { White, Black }
-
-    #region Position Struct
-    public struct Position
-    {
-        public int Row { get; private set; }
-        public int Column { get; private set; }
-        public Position(int row, int col)
-        {
-            Row = row;
-            Column = col;
-        }
-    }
-    #endregion
 }
