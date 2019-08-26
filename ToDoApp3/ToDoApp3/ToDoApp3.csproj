@@ -8,4 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.4" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="ToDoItems.db" />
+  </ItemGroup>
 </Project>

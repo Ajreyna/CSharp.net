@@ -80,6 +80,15 @@ namespace ToDoApp3
                     repo.GetToDoItems();
                     List<ToDoItem> list = repo.GetToDoItems();
                     ConsoleUtils.PrintToDoItems(list);
+                    
+                    
+                    break;
+                }
+
+                //q
+                if (action == "Q")
+                {
+                    break;
                 }
                 //a
                 if (action == "A")
@@ -87,12 +96,39 @@ namespace ToDoApp3
                     Console.WriteLine("Add a Description: ");
                     string Description = Console.ReadLine();
                     Console.WriteLine("Enter the status for the item :");
-                    string Status = Console.ReadLine();
+                    string Status = Console.ReadLine().ToUpper();
+
+                    List<string> pendingList = new List<string>();
+
+                    //if (Status =="PENDING")
+                    //{
+                    //    pendingList.Add(Status);
+                    //    foreach (string items in pendingList)
+                    //    {
+                    //        Console.WriteLine(items);
+                    //    }
+                    //}
+                    
                     Console.WriteLine("enter a due date for the item :");
-
-
                     DateTime DueDate = Convert.ToDateTime(Console.ReadLine());
                     repo.AddItem(Description, Status, DueDate);
+                    //According to Denise, here i could use a conditional to ask user if they'd like
+                    //to continue or waht.
+                    Console.WriteLine("press any key...");
+                    Console.ReadKey();
+
+                    Console.WriteLine("Would you like to enter another Item???");
+                    string answer = Console.ReadLine().ToUpper();
+                    if (answer == "Y")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                    
                 }
                 //u
                 if (action == "U")
